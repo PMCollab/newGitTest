@@ -3,27 +3,148 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Test Website</title>
+    <title>PMCollab| Life is a Collaboration</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Alegreya+Sans:ital,wght@0,100;0,300;0,400;0,500;0,700;0,800;0,900;1,100;1,300;1,400;1,500;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        /*font-family: "Alegreya Sans", sans-serif;*/
+        font-family: "Raleway", sans-serif;
+        color: #1c3145;
+      }
+
+      .background {
+        background-image: url("imgs/blur-test.jpg");
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        height: 100vh;
+        width: 100%;
+      }
+
+      .home-page {
+        display: grid;
+        grid-template-rows: 1fr auto;
+        height: 100vh; /* Use vh as a fallback for browsers that do not support Custom Properties */
+        height: calc(var(--vh, 1vh) * 100);
+        align-items: center;
+        justify-items: center;
+        margin: 0 auto;
+      }
+
+      .menu {
+        background: none;
+        width: 100%;
+        color: black;
+      }
+
+      .menu p {
+        color: white;
+        text-align: center;
+        padding: 10px;
+        font-size: 1.3em;
+        font-variant: all-petite-caps;
+        font-weight: 500;
+      }
+
+      .branding {
+        padding-top: 100px;
+      }
+
+      #branding-info {
+        text-align: center;
+
+        background: white;
+      }
+
+      #branding-info h2 {
+        margin-bottom: 5px;
+        font-weight: 500;
+      }
+
+      #branding-info p {
+        max-width: 260px;
+        margin-bottom: 10px;
+        font-size: 1.2em;
+        line-height: 1.5;
+      }
+
+      #branding-info button {
+        padding: 1em;
+        border: 2px solid #1e334b;
+        background: none;
+        border-radius: 3px;
+      }
+
+      #logo {
+        max-width: 95px;
+        margin-bottom: 7px;
+      }
+
+      .copyright {
+        font-size: 0.7em !important;
+      }
+
+      .menu-nav {
+        padding: 2em;
+        display: grid;
+        align-content: end;
+        justify-content: end;
+        width: 100%;
+        margin-right: 4em;
+        font-weight: bold;
+      }
+
+      .launch-message {
+        font-variant: all-petite-caps;
+        font-weight: 700;
+      }
+    </style>
   </head>
   <body>
-    <h1>Hello World - Pacharo Mzembe</h1>
-    <p>
-      Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quam quisquam
-      eaque est at iusto nam ut nisi expedita magnam dicta distinctio vitae
-      error, sit eius magni asperiores ea dolorem id?
-    </p>
+    <div class="home-page">
+      <div class="branding">
+        <div id="branding-info">
+          <img id="logo" src="imgs/pmCollabLogo.png" /><br />
+          <!--<h2>Welcome!</h2>-->
+          <p>Official creative platform of actor Pacharo Mzembe.</p>
+          <!--<button>Learn More</button>
+                <button>View Menu</button>-->
+          <p class="launch-message">Launching January 2021</p>
+          <p class="copyright">&copy; PMCollab All Rights Reserved 2021</p>
+          <!--<p class="menu">View Menu</p>-->
+        </div>
+      </div>
 
-    <p>
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam at laborum
-      commodi odio reprehenderit? Optio veritatis, totam sint dolore aperiam
-      ipsum doloremque odit maiores sed reprehenderit repudiandae aliquid
-      architecto ipsa?
-    </p>
-    <div>
-      <ul>
-        <li>Bricks</li>
-        <li>Mortar</li>
-      </ul>
+      <div class="menu-nav">
+        <!--  <p>MENU &rarr;</p>-->
+      </div>
     </div>
+
+    <script>
+      // First we get the viewport height and we multiple it by 1% to get a value for a vh unit
+      let vh = window.innerHeight * 0.01;
+      // Then we set the value in the --vh custom property to the root of the document
+      document.documentElement.style.setProperty("--vh", `${vh}px`);
+
+      // We listen to the resize event
+      window.addEventListener("resize", () => {
+        // We execute the same script as before
+        let vh = window.innerHeight * 0.01;
+        document.documentElement.style.setProperty("--vh", `${vh}px`);
+      });
+    </script>
   </body>
 </html>
